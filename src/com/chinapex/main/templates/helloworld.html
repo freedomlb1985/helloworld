@@ -1,0 +1,48 @@
+<html>  
+<head>  
+    <title>Flask Test</title>  
+    <script type="text/javascript">
+
+/*			function sendEvent(pageId, eventId) {
+				var xhr;
+				if (window.XMLHttpRequest) {
+		            xhr = new XMLHttpRequest();
+		        } else {
+		            xhr = new ActiveXObject('Microsoft.XMLHTTP');
+		        } 
+				xhr.onreadystatechange = function () {
+				    if(xhr.readyState == 4) {    
+				    	        if(xhr.status == 200) {    
+				    	        	alert(xhr.responseText);
+				    	        }    
+				    } else {
+//				    	alert("failed");
+				    }
+		        }
+				var type = "GET"
+				if (type == "GET") {
+		            xhr.open("GET", "http://localhost:8000/pixel.gif?pageId="+ pageId + "&eventId=" + eventId, true);
+		            xhr.send();
+		            alert("send get request");
+		        } else if (type == "POST") {
+		            xhr.open("POST", "http://localhost:8000/pixel.gif", true);
+		            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		            xhr.send("for test");
+		        }
+
+			}
+			*/
+			function sendEvent(pageId, eventId) {
+				var script = document.createElement("script");
+	            script.type = "text/javascript";
+	            script.src = "http://localhost:8000/pixel.gif?pageId="+ pageId + "&eventId=" + eventId;
+
+	            var head = document.getElementsByTagName("head")[0];
+	            head.insertBefore(script, head.firstChild);
+			}
+		</script>
+</head>  
+<body>  
+    <h2>Hello {{name}}</h2>  
+</body>  
+</html>   

@@ -1,6 +1,7 @@
 import sys
 
 import com.chinapex.libs.MyLibs as mylibs
+from com.chinapex.aop.DecoratorDemo import deco
 
 sys.stderr.write("import test!\n")
 sys.stdout.write("import test!\n")
@@ -24,7 +25,8 @@ class FooClass:
         self.age = age
         self.height = height
         self.weight = weight
-        
+    
+    @deco
     def showMe(self):
         print 'my name is %s' % self.name
         print 'i am %d years old' % self.age
@@ -39,9 +41,10 @@ class FooClass:
 if __name__ == '__main__':
     foo = FooClass('kobe', 39, 198, 100);
     foo.showMe()
-    info = foo.getInformation()
-    print info
-    print sys.path
-    mylibs.func1(1, 2)
-    mylibs.func2(4, 2)
+    print foo
+#     info = foo.getInformation()
+#     print info
+#     print sys.path
+#     mylibs.func1(1, 2)
+#     mylibs.func2(4, 2)
     
